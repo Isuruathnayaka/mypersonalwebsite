@@ -329,11 +329,11 @@ body {
 /* MOBILE LARGE 425px */
 @media (max-width: 425px) {
     .main-img { width: 200%; left: -200px; }
-    .home-title { font-size: 55px; top: 32%; }
-    .home-subtitle { font-size: 48px; }
-    .home-slogane { font-size: 13px; }
-    .home-description { font-size: 12px; max-width: 260px; }
-    .btn { padding: 10px 25px; font-size: 14px; }
+    .home-title { font-size: 55px; top: 32%; left: 140px; top: 420px }
+    .home-subtitle { font-size: 48px; left: 140px; top: 420px }
+    .home-slogane { font-size: 13px; left: 140px; top: 520px}
+    .home-description { font-size: 12px; max-width: 260px; left: 90px; top: 580px }
+    .btn { padding: 10px 25px; font-size: 14px; left: 50px; top: 580px}
 }
 
 /* MOBILE MEDIUM 375px */
