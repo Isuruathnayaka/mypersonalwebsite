@@ -641,6 +641,14 @@
 </footer>
 
 <script src="frontend.js"></script>
+<script>
+    document.querySelector("#contactForm")?.addEventListener("submit", function() {
+        setTimeout(() => {
+            this.reset();   // Clear all inputs
+        }, 500);
+    });
+</script>
+
 
 
 
