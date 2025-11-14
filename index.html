@@ -579,26 +579,35 @@
             </div>
 
             <div class="contact-form">
-                <form id="contactForm">
+                <form id="contactForm" action="https://formsubmit.co/rathnayakaisuru422@gmail.com" method="POST">
+
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
                     <div class="form-group">
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" name="name" required>
                         <label for="name">Your Name</label>
                     </div>
+
                     <div class="form-group">
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" required>
                         <label for="email">Your Email</label>
                     </div>
+
                     <div class="form-group">
-                        <input type="text" id="subject" name="subject" >
+                        <input type="text" id="subject" name="subject" required>
                         <label for="subject">Subject</label>
                     </div>
+
                     <div class="form-group">
-                        <textarea id="message" name="message" rows="5" ></textarea>
+                        <textarea id="message" name="message" rows="5" required></textarea>
                         <label for="message">Your Message</label>
                     </div>
+
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
+
         </div>
     </div>
 </section>
@@ -635,41 +644,7 @@
 
 <script src="frontend.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-    (function () {
-        emailjs.init({
-            publicKey: "3X8TkmZcUDwXTCNm5", //  Your actual public key
-        });
-    })();
 
-    const contactForm = document.getElementById("contactForm");
-
-    contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // Optional hidden field for {{time}} variable
-        const timeField = document.createElement("input");
-        timeField.type = "hidden";
-        timeField.name = "time";
-        timeField.value = new Date().toLocaleString();
-        this.appendChild(timeField);
-
-        //  Send email
-        emailjs
-            .sendForm("service_26353bu", "template_s1k2eel", this)
-            .then(() => {
-                alert(" Message sent successfully!");
-                contactForm.reset();
-                timeField.remove();
-            })
-            .catch((error) => {
-                console.error(" Failed to send message:", error);
-                alert("⚠️ Failed to send message. Please try again.");
-                timeField.remove();
-            });
-    });
-</script>
 
 </body>
 </html>
